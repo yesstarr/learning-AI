@@ -1,0 +1,40 @@
+//환경 구축하기, Anaconda Prompt 다운받아서 tensorflow-cpu 다운로드 명령어는
+pip install tensorflow-cpu
+conda acitvate () //()로 이동하기
+reverse
+conda deactive
+
+conda env list // 뭐있는지 확인
+conda list //마찬가지
+
+conda create -n (가상환경명) // 가상환경 설치
+or
+conda create -n (가상환경명) python=(version)
+
+conda env remove -n (가상환경명) //가상환경삭제
+
+conda install (패키지명)//"현재사용중인 가상환경에서" 패키지 설치
+reverse
+conde uninstall
+
+cls //화면클리어
+cd (디렉터리) //이동
+dir  // 리스트확인
+mkdir (폴더명)//폴더생
+python 이라 치고 나서 python 가능
+tensorflow 불러오기 import tensor flow as tf// tf라는 단축키로 불러오겠따.
+print(tf.__version__)//tf 버젼 뭐냐 (잘설치 되었는지 확인용 ㅇㅇ)
+quit() /// 파이썬 나오기
+
+--------------------------------------------------
+
+//jupyterlab을 사용해보자!
+
+code, markdown
+code는 코딩할떄
+markdown은 제목이나 뭐 그런거 
+Markdown Reference 누르면 여러 글씨체나 모양 쓰는 법 나옴
+ctrl enter 실행, 다음 셀 x
+shift enter 실행,다음 셀 o
+종료할때는 Shut Down All 누르기!
+
