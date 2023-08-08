@@ -1,0 +1,22 @@
+//python basic theory
+1.standard library : 기준이 되는 패키지
+2.numpy : 숫자특화 패키지
+3.pandas : 패널 데이터, 여러 개체에서 얻은 quantities. 시간 간격으로 조립되어 시간순으로 정렬 되어있는 패키지
+
+==> standard library 배우고 numpy, pandas, matplot.. 순으로
+
+standard library
+(1)  
+  1.indentation(들여쓰기)
+  2.suite : for문,while문 등등 시작부터 그control statement가 끝나는 부분까지
+  3.block : function 안에서 중요 기능을 결정하는 코드
+  4.snippet : 코드의 작은 부분
+(2) Data types
+integers,floats.boolean..Decimal(소수점을 정확하게 표현하고 싶을 때)
+
+(3)Clear,concise,and compact coding
+1.indentation(들여쓰기)
+2.black lines(enter)를 이용하여 code block을 구별하라 
+3.주석 이용하기 #(comment line)
+4.""" """ 를 이용하여 주석 이용(multiple comment lines),class나 function들 또한 설명 싸악 해서 하자
+5.class를 잘 만드는 것이 핵심이다. ****
