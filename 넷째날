@@ -1,0 +1,205 @@
+__6. if clause and comparison opreators__
+
+[Comparison opreators]
+
+- x > y : x is greater than y
+- x < y : x is less than y
+- 등등
+
+[if clause]
+
+- if : performs an action if a condition is met(True) and no action if not
+- if..else : same as above and returns alternative action if not
+x = int(input('Enter an integer'))
+
+if x == 1:
+    print('x has a value of 1')
+else:
+    print('x does not have a value of 1')
+var1 = int(input('Enter the first integer'))
+if var1 < 0:
+    print('The first integer is ',var1,'and its value is negative.')
+
+var2 = int(input('Enter the second integer'))
+if var2 < 0:
+   print("The second integer is negative","and its value is ",var2)
+else:
+   print("The second integer is positive","and its value is ",var2)
+__7. Dynamic value assignment and type changing__
+- What happens if you assign different values for the same variable?
+print(x,type(x))
+
+x = 2.5
+print(x,type(x))
+
+x='Arnold'
+print(x,type(x))
+__8.Multiple statements on a single line__
+print("Hello!");print("This is KOOC content \nfor Python Basic.")
+
+-----------------------------------------------------------------------------------------
+
+## Python: control statement
+
+- control statements: if...elif...else,while,for,break and continue
+- Additionally:we learn formatted strings,augmented assignments
+
+
+__1. if...elif...else__
+
+# Classifing weight categories
+weight = int(input('Type your weight'))
+
+if weight >= 90:
+    print('fat!','Exercise!')
+elif weight >= 60:
+    print('normal')
+else:
+    print('thin\nEat more!')
+#elif를 사용함으로써  weight >= 60 은 60 <=weight < 90 이 됨, 자동으로 if 에서 설정한 범위는 빼는것
+grade = float(input('Enter a grade'))
+
+if grade >= 90:
+    print('A')
+elif grade >=80:
+    print('B')
+elif grade >= 70:
+    print('C')
+elif grade >= 60:
+    print('D') 
+else:
+    print('F')
+weight = int(input('Type your weight in kg'))
+height = int(input('Type your height in cm'))
+
+if weight >=90 and height <= 150:
+    print('fat!','Exercise!')
+elif weight >=60 or 160<= height <180:
+    print('normal')
+else:
+    print('thin! \nEat more!')
+
+__2.While statement__
+
+- iteration,repeating the same suite,continues as long as a condition remains true.
+- sentenel-controlled iteration: repeats until a sentinal(flag,signal) value appears.
+
+k = 1
+
+while k <=100:
+    k = k*2
+    print(k)
+l = 10
+while l > 0:
+    l = l - 1
+    print(l,end = ' ')
+    #end = ' ' >> 출력 뒤에 빈공간을 넣어서 수평으로 출력
+total = 0
+cnt = 0
+grade = int(input('Enter grade or -1 to end: '))
+
+while grade != -1:
+    total +=grade
+    cnt += 1
+    grade = int(input('Enter grade or -1 to end: '))
+
+if cnt != 0:
+    average = total/cnt
+    print('Total grade is', total)
+    print(f'The number of student is {cnt}')
+    print(f'Class Average is {average}')
+    #fstring은 항상 f로 시작, 문자열 속에 중괄호와 함께 변수명을 넣을 수 있다
+else:
+    print('No grades were entered')
+__For loop for itereation__
+
+- Collection based iteration
+- repeat actions for each item in a sequence of items.
+for i in [1,2,3,4,5]:
+    print("item :",i)
+
+
+letters = ['A','B','C','D']
+for i in letters:
+    print("letters :", i)
+    """
+    for,in은 한 세트 i는 내 맘대로 변수 설정 c언어와 같이 내 맘대로 가능한거
+    그냥 in 뒤에 배열을 넣어주면 됨, 배열 안에 요소들이 순차적으로 찍힘
+    """
+for i in range(len(letters)): # == range(4)
+    print("Each letter : ",letters[i])
+
+for i in 'PythonProgramming':
+    print(i,end = ' ')
+print()# == 줄바꿈
+total = 0
+for number in [2,-3,0,17,9]:
+    total += number
+print(total)
+__4.Augmented assignment__
+total = 0
+for i in range(10):
+    print(i, end = ' ')
+    total += i
+total #print(total)
+#total 대신 sum 같은 built-in function 사용 금지
+__5. Making a for loop with augmented assignments__
+total = 0
+Numstudents = 0
+grade = [98,76,71,87,83,90,57,79,82,94]
+for i in grade:
+    total += i
+    Numstudents += 1
+average = total/Numstudents
+print(f'Class average is {average:.2f}')
+print(f'Average is {total/Numstudents:.2f}')
+__6.A built-in function,range__
+for i in range(7,20):
+    print(i,end = ', ')
+print()
+for i in range(10,20,3):
+    print(i, end = ', ')
+    
+print()
+for i in range(15,0,-2):
+    print(i, end = ', ')
+# range(starting num,ending num, +or-)
+__7. Advanced use of while and for loops__
+
+- break: terminates loops immediately.
+- continue: terminates loops immedately,jumps to the top of the loop and continues.
+- in while and for loops, else can be used
+ l = 10
+while l > 0:
+    l -=1
+    print(l,end = ' ')
+print()
+print('Loop ended', l)
+l = 10
+while l > 0:
+    l -= 1
+    if l ==5:
+        break
+    print(l, end = ' ')
+print()
+print('loop ended' , l)
+l = 10
+while l > 0:
+    l -= 1
+    if l==5:
+        continue
+    print(l,end = ' ')
+else:
+    print('Loop ended',0)
+# break와 continue의 차이점
+for i in 'PythonProgramming':
+    print(i,end = ' ')
+for i in 'PythonProgramming':
+    if i =='g':
+        break
+    print(i,end = ' ')
+for i in 'PythonProgramming':
+    if i == 'n':
+        continue
+    print(i,end= ' ')
+    
