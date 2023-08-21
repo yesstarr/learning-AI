@@ -1,0 +1,130 @@
+## Python: Creating Functions
+- Built-in functions: int,float,print,input...
+- A function with the keyword **def**, which is followed by uts name starting with a **lowercase letter**
+__1. Creating your own functions with a single parameter__
+#인풋값을 바꾸면 아웃풋도 바뀐다. 함수.. 수학에서 함수 생각
+import math #math package 안에 pi 있음.
+
+def circle(radius):
+    """함수 설명 넣기!!!:Calculates area and circumference of a circle with a radius"""
+    
+    return math.pi*radius**2,2*math.pi*radius #2개의 y값을 내뱉어라
+#calling a function and offering a radius value
+circle(3)
+#Function calls can be embedded
+x = 3
+print(f'The area and circumference of a circle with {x}cm radius\
+are {circle(x)[0]:.2f}cm squared and {circle(x)[1]:.2f}cm.')
+#f스트링, 함수값에서 인덱스 값만 불러오기!
+circle?
+#함수의 설명
+__2.Creating functions with multiple parameters__
+def myfunction(x,y):
+    return x+y,x*y
+myfunction(15,3)
+def findmin():
+    """Finding the minimum among three integers"""
+    
+    x=int(input('Enter first integers: ' ))
+    y=int(input('Enter second integer: ' ))
+    z=int(input('Enter third integer: '))
+    minimum = x
+    if y < minimum:
+        minimum = y
+    if z < minimum:
+        minimum = z
+    return minimum
+findmin()
+def findmin1(x,y,z):
+    """Another function for finding a aminimum"""
+    
+    return min(x,y,z) #min define function in python for calculate minimum
+print(findmin1(7,8,9))
+print(x) #global x, look at [11], Value defined in function use only this function
+__3. Functions with default parameter values__
+def rectangle(width=3,height=5):
+    """calculating the area of a tectangle"""
+    
+    return width*height
+print(rectangle(),rectangle(2),rectangle(4,5)) # hollow parentheses is default parameter, parentheses in different parameter  is sequentially filled 
+__4. A function taking an arbitary number of argument__
+def my_average(*nums): # * : i don't know how many valuables,flexibility
+    """Calculatin average with multiple numbers"""
+    
+    return sum(nums)/len(nums)
+my_average(1,2,3,4,5,6)
+grades = [1,2,3,4,5,6]
+my_average(*grades)
+__5.Main function and name variable__
+
+- The main function is the point of executing a python program.
+- it works only when the program is executed directly
+- The name variable is a special variable of Python, evaluation the name of current program.
+- it also takes "__main__"when a script is executed directly
+def main_function(x):
+    """An excercise of main function"""
+    print(f'The area and circumference of a circle with {x}cm radius\
+    are {circle(x)[0]:.2f}cm squared and {circle(x)[1]:.3f}c,.')
+    print('Main functioin is executed!')
+    
+if __name__ == '__main__': #__name__이란 python안에 기본적으로 탑재되어있는 변수수
+    yes(3)
+main(5);__name__
+#main 함수는 첫번째걸로 자동으로 설정?
+# When a source file is run as a main program, the source file program has the name,__main__
+# And if clause becomes True and the main function is executed
+%run main_functio.py
+!python main_functio.py
+import main_functio as mf
+print(mf.circle(5))
+print(mf.__name__)#모듈로 불러올때는 __name__은 파일명
+__5.Python standard libraries__
+- https://docs.python.org/3/library/index.html (도구모음집)
+- ma + tab, math.?  (일부만 기억날때)
+__6.Methods in Python__
+- Methods are functions you can call on your object.
+- syntax: Your_object_name.method_name(arguments).
+my_name = 'Yesung'
+print(my_name.lower(),my_name.upper(),my_name)
+__8.Random number generation in Python__
+import random
+
+for roll in range(10):
+    print(random.randrange(1,7),end = ' ')
+frequency0 = 0
+frequency1 = 0
+sample = 10_000 #천단위 구분 언더바로
+
+for roll in range(sample):
+    face = random.randrange(0,2)
+    if face == 0:
+        frequency0 += 1
+    if face == 1:
+        frequency1 += 1
+print(f'{"Face"}{"Frequency":>13}{"Ratio":>10}')
+print(f'{0:>4}{frequency0:>13}{frequency0/sample*100:>10.2f}')
+print(f'{0:>4}{frequency1:>13}{frequency1/sample*100:>10.2f}')
+random.seed(20230821) #처음만 랜덤으로 잡히고 쭉 고정
+
+for roll in range(10):
+    print(random.randrange(1,7),end = ' ')
+__8.Importing libraries and modules in python__
+from math import ceil,floor,pi #math중 일부만 싸악, ㅇmath.안써도 됨 내가 하나하나 불른거기때문
+import statistics as stat #편하게 줄여서 싸악
+
+print(pi,ceil(9.8),floor(9.8))
+
+
+main_functio.py
+import math
+
+def circle(radius):
+    
+    return math.pi*radius**2, 2*math.pi*radius
+
+def main(x):
+    print(f'Tjearea!!!!~~~~~~')
+    print(f'{circle(x)[0]:.2f},{circle(x)[1]:.3f}')
+    
+if __name__ == '__main__':
+    main(2)
